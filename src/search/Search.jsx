@@ -13,12 +13,12 @@ const Search = ({searchData,setOnchange}) => {
             searchData?
             searchData?.map((book)=>(<>
             <div  key={book.id}  className=' col-sm-6 col-md-4 col-lg-2' >   
-            <Image id={book.id} image={book.image} key={book.id}/>  
+            <Image id={book.id} image={book.image} />  
                
             <p>{book.title}</p>
             </div>
             </>))
-            :<div style={{height:100}} className='w-100  d-flex align-items-center justify-content-center'>No Matching Search </div>
+            :<div  style={{height:100}} className='w-100  d-flex align-items-center justify-content-center'>No Matching Search </div>
         }
         </div>
     </div>
