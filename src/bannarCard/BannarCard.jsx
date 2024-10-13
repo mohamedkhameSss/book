@@ -9,6 +9,7 @@ import 'swiper/css/effect-cards';
 
 import './styles.css';
 import { EffectCards } from 'swiper/modules';
+import Image from '../imageComponent/Image';
 const BannarCard = ({data}) => {
   console.log(data);
   
@@ -22,8 +23,8 @@ const BannarCard = ({data}) => {
     {
       data.map((book)=>
        
-        (<SwiperSlide style={{backgroundImage: `url(${book.image})`,borderRadius:0,border:'1px solid black' }}  key={book.id}>
-        
+        (<SwiperSlide style={{borderRadius:0,border:'1px solid black' }}  key={book.id}>
+        <Image id={book.id} image={book.image} key={book.id}/>
           </SwiperSlide>)
       
       )

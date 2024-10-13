@@ -3,13 +3,13 @@ import axios from 'axios'
 import BannarCard from '../bannarCard/BannarCard'
 import Search from '../search/Search'
 const Home = () => {
-    const [data, setData] = useState([])
+    const [recentdata, setRecenData] = useState([])
     const [searchData, setSearchData] = useState([])
     const [onchange, setOnchange] = useState([])
 
     useEffect(() => {
          axios.get('https://www.dbooks.org/api/recent')
-        .then(response => setData(response.data.books))
+        .then(response => setRecenData(response.data.books))
         .catch(error => {console.log(error)}) 
     }, [])
     useEffect(() => {
@@ -17,11 +17,11 @@ const Home = () => {
         .then(response => setSearchData(response.data.books))
         .catch(error => {console.log(error)}) 
     }, [onchange])
-    console.log(data);
+    // console.log(data);
     
   return (
     <div className='w-100'>
-        <BannarCard data={data}/>
+        <BannarCard data={recentdata}/>
         <Search setOnchange={setOnchange} searchData={searchData} />
        
     </div>
