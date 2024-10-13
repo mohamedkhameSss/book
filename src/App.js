@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Home/Home';
 import {
@@ -7,7 +6,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Search from './search/Search';
 import BookPage from './bookPage/BookPage';
 function App() {
 

@@ -4,17 +4,17 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 const BookPage = () => {
     const {id}=useParams()
-    const [bookInfo, setBookInfo] = useState({})
+    const [bookInfo, setBookInfo] = useState([])
    
     useEffect(() => {
         axios.get(`https://www.dbooks.org/api/book/${id}`)
        .then(response => setBookInfo(response.data))
        .catch(error => {console.log(error)}) 
-   }, [])
+   }, [id])
   return (
 
     <>
-    {bookInfo?
+    {bookInfo.length!==0?
     <div className='container text-start mt-5  '>
        
         <div className='row '>
